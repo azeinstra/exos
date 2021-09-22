@@ -19,8 +19,7 @@ def number():
     return num
 
 def sum_number(list):
-    for i in list:
-        n = sum(list)
+    n = sum(list)
     return n
 
 x=number()
