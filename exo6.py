@@ -16,8 +16,9 @@ from random import *
 
 
 Minus="azertyuiopqsdfghjklmwxcvbn"
+Maj=""
 for i in range(len(Minus)):
-    Maj=Minus[i].upper()
+    Maj+=Minus[i].upper()
 special="!@#$%^&*()[]{};:,./<>?\|`~-=_+"
 numbers="0123456789"
 
@@ -44,19 +45,15 @@ list_pwd.append(choice(numbers))
 list_pwd.append(choice(special))
 
 if lengh == 4:
+    shuffle(list_pwd)
     pwd="".join(list_pwd)
     print("Votre mdp est: ", pwd)
 else:
     for n in range(lengh-4):
         x=choice(all)
         list_pwd.append(x)
+        shuffle(list_pwd)
         pwd="".join(list_pwd)
     print("Votre mdp est: ", pwd)
         
-
-
-
-    
-
-
 
