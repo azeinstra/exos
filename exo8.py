@@ -36,6 +36,7 @@ if not os.path.exists("logs"):
     os.makedirs("logs")
 
 for i in range(number_times):
+
     for w in websites:
         
         filepath = "logs/"+w["name"].lower()+"_health.log"   
@@ -49,15 +50,12 @@ for i in range(number_times):
         
             print(datetime.now(),"   ",w["url"],"   ","Status Code:", status_url)
             
-            with open(filepath, "a") as logFile :
-                logFile.write(f"{date}   {url_adress}   Status Code: {status_url}\n")
         except:
-            status_url=r.status_code
-            
             print(datetime.now(),"   ",w["url"],"   ","Status Code:", status_url)
             
-            with open(filepath, "a") as logFile :
-                logFile.write(f"{date}   {url_adress}   Status Code: {status_url}\n")
+        with open(filepath, "a") as logFile :
+            logFile.write(f"{date}   {url_adress}   Status Code: {status_url}\n")
+            
     time.sleep(delay)  
 
 
